@@ -16,7 +16,6 @@ export const Navbar = () => {
     }
 
     return (
-
         <nav className="navbar navbar-expand-lg navbar-dark p-3">
             <div className="container-fluid">
                 <Link

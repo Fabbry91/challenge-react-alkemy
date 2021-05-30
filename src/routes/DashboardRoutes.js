@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { HeroScreen } from '../components/heroes/HeroScreen'
 import { Home } from '../components/Home'
 import { Navbar } from '../components/ui/Navbar'
 import { Search } from '../components/ui/Search'
 
+
 export const DashboardRoutes = () => {
     return (
-        <Fragment>
+        <>
             <Navbar />
             <div className="container">
                 <Switch>
@@ -18,6 +19,6 @@ export const DashboardRoutes = () => {
                     <Redirect to="/" />
                 </Switch>
             </div>
-        </Fragment>
+        </>
     )
 }

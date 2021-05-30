@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 
 export const Home = () => {
+
     const { heroCont, setHeroCont } = useContext(UserContext);
     const [tipo, setTipo] = useState('');
     const [powers, setPowers] = useState([])
@@ -40,7 +41,7 @@ export const Home = () => {
     }
 
     return (
-        <Fragment>
+        <>
             {
                 heroCont == 0 ?
 
@@ -49,7 +50,7 @@ export const Home = () => {
                         <div className="py-5 text-center container">
                             <div className="row py-lg-5">
                                 <div className="col-lg-6 col-md-8 mx-auto">
-                                    <h1 className="text-white">Equipo de Heroes</h1>
+                                    <h2 className="text-white">Equipo de Heroes</h2>
                                     <p className="lead text-white">Crea tu propio equipo de heroes y villanos. En el conoceras el tipo de equipo que tienes, ademas la sumatoria de poderes de sus personajes. Para crear tu equipo debes dirigirte a la seccion buscar Heroes. ¿Empezamos?</p>
                                     <p>
                                         <Link to="Search" className="btn btn-primary my-2">Buscar Heroes</Link>
@@ -124,7 +125,6 @@ export const Home = () => {
                         </Fragment>
                     )
             }
-        </Fragment>
+        </>
     )
 }
-

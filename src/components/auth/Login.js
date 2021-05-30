@@ -6,7 +6,7 @@ import { Errores } from '../ui/Errores';
 import { useFormik } from 'formik';
 import axios from 'axios';
 
-export const Login = ({ history }) => {
+export const Login = ({history}) => {
 
     const { dispatch, initialState } = useContext(UserContext);
     const [error, setError] = useState('');
@@ -57,7 +57,7 @@ export const Login = ({ history }) => {
             .then((response) => {
                 console.log(response.data);
             }).catch((error) => {
-               setError("Please provide valid email and password")
+                setError("Please provide valid email and password")
             })
     }
 
@@ -131,8 +131,8 @@ export const Login = ({ history }) => {
                     </div>
 
                     <div className="col-md-6 col-lg-6">
-                            <img src="./assets/img/heroes.png" className="login-img img-fluid" />
-                        
+                        <img src={process.env.PUBLIC_URL+"/assets/img/heroes.png"} className="login-img img-fluid" />
+
                     </div>
 
                 </div>
