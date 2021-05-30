@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/challenge-react-alkemy/static/css/main.a6a035ad.chunk.css",
+    "main.js": "/challenge-react-alkemy/static/js/main.66a8ea2b.chunk.js",
+    "main.js.map": "/challenge-react-alkemy/static/js/main.66a8ea2b.chunk.js.map",
+    "runtime-main.js": "/challenge-react-alkemy/static/js/runtime-main.da68161f.js",
+    "runtime-main.js.map": "/challenge-react-alkemy/static/js/runtime-main.da68161f.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/challenge-react-alkemy/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.0e29dffa.chunk.js": "/challenge-react-alkemy/static/js/2.0e29dffa.chunk.js",
+    "static/js/2.0e29dffa.chunk.js.map": "/challenge-react-alkemy/static/js/2.0e29dffa.chunk.js.map",
+    "static/js/3.7026e66e.chunk.js": "/challenge-react-alkemy/static/js/3.7026e66e.chunk.js",
+    "static/js/3.7026e66e.chunk.js.map": "/challenge-react-alkemy/static/js/3.7026e66e.chunk.js.map",
+    "index.html": "/challenge-react-alkemy/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/challenge-react-alkemy/static/css/2.61b4cb56.chunk.css.map",
+    "static/css/main.a6a035ad.chunk.css.map": "/challenge-react-alkemy/static/css/main.a6a035ad.chunk.css.map",
+    "static/js/2.0e29dffa.chunk.js.LICENSE.txt": "/challenge-react-alkemy/static/js/2.0e29dffa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.da68161f.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.0e29dffa.chunk.js",
+    "static/css/main.a6a035ad.chunk.css",
+    "static/js/main.66a8ea2b.chunk.js"
+  ]
+}
