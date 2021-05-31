@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project was generated with React Hook, Formik, Bootstrapp 5 and JWT in the Frontend. The project consumes the endpoints of the following 'https://superheroapi.com/' to perform different operations. The app has a Loguin, HOME section and a Search section where you search for heroes to create your team of heroes and villains that will then be displayed in the Home.
 
-## Getting started 🚀
+##Getting started 🚀
 
 In the project directory, you can run:
 
@@ -37,7 +37,7 @@ Este proyecto fue generado con [Create React App](https://github.com/facebook/cr
 
 Este proyecto fue generado con React Hook, Formik, Bootstrapp 5 y JWT en el Frontend. El proyecto consume los endpoints de la siguiente 'https://superheroapi.com/' para realizar diferentes operaciones. La app cuenta con un Loguin, sección HOME y una sección Search donde buscas héroes para crear tu equipo de héroes y villanos que luego se mostrarán en el Home.
 
-## Cómo empezar 🚀
+##Cómo empezar 🚀
 
 En el directorio del proyecto, puedes ejecutar:
 
