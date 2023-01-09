@@ -1,18 +1,24 @@
-import React from 'react';
+// React 17
 import ReactDOM from 'react-dom';
+
+// React 18
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// libs
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 import { App } from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
- 
-    <App />,
-  document.getElementById('root')
-);
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
