@@ -1,30 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link, Redirect, useParams } from 'react-router-dom'
-import { UserContext } from '../../context/UserContext'
+
 
 
 export const HeroScreen = () => {
 
-    const { heroCont } = useContext(UserContext);
-
-    const { heroId } = useParams();
-
-
-
-    if (heroCont == 0) {
-        return <Redirect to="/" />
-    }
-
-    if (!heroId) {
-        return < Redirect to="/" />
-    }
-
-    const auxHero = heroCont.find(h => h.id === heroId);
-
-    const { image, name, appearance, biography, work } = auxHero
 
     return (
-        <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-4">
+        <div>hola 2
+            {/*<div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-4">
             <div className="col-md-5 col-lg-5">
                 <div className="overflow" >
                     <img src={image.url} alt="..." className="card-img-top" />
@@ -38,7 +22,7 @@ export const HeroScreen = () => {
                     <h2 className="card-title">{name}</h2>
                     <div className="row">
                         <div className="col-md-6 col-lg-6">
-                            Color de ojos: {/*appearance.eye-color*/}<br />
+                            Color de ojos: {/*appearance.eye-color*<br />
                         Genero: {appearance.gender} <br />
                             <h4>Altura</h4>
                             <ul>
@@ -51,7 +35,7 @@ export const HeroScreen = () => {
                         </div>
                         <div className="col-md-6 col-lg-6">
                             Raza: {appearance.race}<br />
-                        Color de cabello: {/*appearance.hair-color*/}<br />
+                        Color de cabello: {/*appearance.hair-color*<br />
                             <h4>Peso</h4>
                             <ul>
                                 {
@@ -75,6 +59,7 @@ export const HeroScreen = () => {
 
                 </div>
             </div>
+                    </div>*/}
         </div>
     )
 }

@@ -1,19 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
-import { Login } from '../components/auth/Login'
 import { HeroScreen } from '../components/heroes/HeroScreen'
 import { Home } from '../components/Home'
 import { Navbar } from '../components/ui/Navbar'
 import { Search } from '../components/ui/Search'
-import { UserContext } from '../context/UserContext'
-import { DashboardRoutes } from './DashboardRoutes'
-import { PrivateRoute } from './PrivateRoute'
-import { PublicRoute } from './PublicRoute'
 
 
-export const AppRouter = () => {
-
-    const { user } = useContext(UserContext);
+export const AppRouter = () => {    
 
     return (
         <Router>

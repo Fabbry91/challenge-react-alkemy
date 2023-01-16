@@ -1,6 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react'
-import { UserContext } from './context/UserContext';
-import { authReducer } from './reducer/authReducer';
+import React from 'react'
 import { AppRouter } from './routes/AppRouter';
 import './App.css'
 
@@ -11,17 +9,15 @@ const init = () => {
 
 export const App = () => {
 
-  const [user, dispatch] = useReducer(authReducer, {}, init);
+  /*const [user, dispatch] = useReducer(authReducer, {}, init);
 
   useEffect(() => {
     localStorage.setItem('user', JSON.stringify(user));
   }, [user])
 
-  const [heroCont, setHeroCont] = useState([])
+  const [heroCont, setHeroCont] = useState([])*/
 
-  return (
-    <UserContext.Provider value={{ heroCont, setHeroCont, user, dispatch, }}>
+  return (    
       <AppRouter />
-    </UserContext.Provider>
   )
 }

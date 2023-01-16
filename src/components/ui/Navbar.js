@@ -1,18 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { NavLink, Link, useHistory } from 'react-router-dom'
-import { UserContext } from '../../context/UserContext'
-import { types } from '../../reducer/types';
 
 export const Navbar = () => {
 
-    const { user, dispatch } = useContext(UserContext);
     const history = useHistory();
 
     const handleLogout = () => {
         history.replace('/');
-        dispatch({
-            type: types.logout
-        })
     }
 
     return (
@@ -43,10 +37,11 @@ export const Navbar = () => {
                         </li>
                     </ul>
 
-                    <div className="d-flex">
+                    {/* <div className="d-flex">
                         <span className="span text-primary me-2"> {user.email}</span>
                         <button className="btn text-light" onClick={handleLogout} >Logout</button>
                     </div>
+    */}
                 </div>
             </div>
         </nav>

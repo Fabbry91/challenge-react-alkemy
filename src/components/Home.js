@@ -1,10 +1,30 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { UserContext } from '../context/UserContext';
+import { getHeroes, getVillains } from '../services/Axios';
+//import { UserContext } from '../context/UserContext';
+import { HerosAllScreen } from './heroes/HerosAllScreen';
 
 export const Home = () => {
 
-    const { heroCont, setHeroCont } = useContext(UserContext);
+    const [list, setList] = useState([]);
+
+    useEffect(() => {
+
+        const setHeroes = async () => {
+            let array = [];
+            const hero = await getHeroes();
+            const vill = await getVillains();
+            array = [...hero.data.slice(0,10), ...vill.data.slice(0,10)];
+            setList(array.sort());
+        }
+
+        setHeroes();
+    }, [setList])
+
+
+
+
+    /*const { heroCont, setHeroCont } = useContext(UserContext);
     const [tipo, setTipo] = useState('');
     const [powers, setPowers] = useState([])
 
@@ -38,93 +58,89 @@ export const Home = () => {
     const hadleDelete = (id) => {
         const newArr = heroCont.filter((h) => h.id !== id);
         setHeroCont(newArr)
-    }
+    }*/
 
     return (
         <>
-            {
-                heroCont == 0 ?
-
-
-                    (
-                        <div className="py-5 text-center container">
-                            <div className="row py-lg-5">
-                                <div className="col-lg-6 col-md-8 mx-auto">
-                                    <h2 className="text-white">Equipo de Heroes</h2>
-                                    <p className="lead text-white">Crea tu propio equipo de heroes y villanos. En el conoceras el tipo de equipo que tienes, ademas la sumatoria de poderes de sus personajes. Para crear tu equipo debes dirigirte a la seccion buscar Heroes. ¿Empezamos?</p>
-                                    <p>
-                                        <Link to="Search" className="btn btn-primary my-2">Buscar Heroes</Link>
-                                    </p>
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                {
+                    list.map((h) => (
+                        <div className="col" key={h.id}>
+                            <div className="card" style={{ marginBottom: '1em' }}>
+                                <div className="container-img">
+                                    <img src={h.images?.sm} className="card-img-top" alt="..." />
                                 </div>
-                            </div>
-                        </div>) :
+                                <div className="card-body">
+                                    <h5 className="card-title">{h.name} <span>({h.biography?.alignment})</span></h5>
+                                    <div className="hero-data">
+                                        <div className="more-info-container">
+                                            <div className="info-block">
+                                                <div className="info-block-label">
+                                                    <img src={`${process.env.PUBLIC_URL}/assets/icons/brain.png`} alt='brain' />
+                                                    <span>Inteligencia</span>
+                                                </div>
+                                                <div className="info-block-value">
+                                                    {h.powerstats?.intelligence}
+                                                </div>
+                                            </div>
 
+                                            <div className="info-block">
+                                                <div className="info-block-label">
+                                                    <img src={`${process.env.PUBLIC_URL}/assets/icons/strong.png`} alt='strong' />
+                                                    <span>Fortaleza</span>
+                                                </div>
+                                                <div className="info-block-value">
+                                                    {h.powerstats?.strength}
+                                                </div>
+                                            </div>
 
+                                            <div className="info-block">
+                                                <div className="info-block-label">
+                                                    <img src={`${process.env.PUBLIC_URL}/assets/icons/speed.png`} alt='speed' />
+                                                    <span>Velocidad</span>
+                                                </div>
+                                                <div className="info-block-value">
+                                                    {h.powerstats?.speed}
+                                                </div>
+                                            </div>
 
+                                            <div className="info-block">
+                                                <div className="info-block-label">
+                                                    <img src={`${process.env.PUBLIC_URL}/assets/icons/charge.png`} alt='charge' />
+                                                    <span>Durabilidad</span>
+                                                </div>
+                                                <div className="info-block-value">
+                                                    {h.powerstats?.durability}
+                                                </div>
+                                            </div>
 
-                    (
-                        <Fragment>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-8 mx-auto text-center">
-                                    <h4 className="lead text-white">Acumulado de poderes</h4>
-                                </div>
-                            </div>
+                                            <div className="info-block">
+                                                <div className="info-block-label">
+                                                    <img src={`${process.env.PUBLIC_URL}/assets/icons/power.png`} alt='power' />
+                                                    <span>Poder</span>
+                                                </div>
+                                                <div className="info-block-value">
+                                                    {h.powerstats?.power}
+                                                </div>
+                                            </div>
 
-                            <div className="text-white text-center">
-                                Combate: <span className="span text-primary">{powers[0]}</span> &nbsp; Durabilidad: <span className="span text-primary">{powers[1]}</span> &nbsp; Inetligencia: <span className="span text-primary">{powers[2]}</span> &nbsp; Fuerza: <span className="span text-primary">{powers[3]}</span> &nbsp; Velocidad: <span className="span text-primary">{powers[4]}</span>  &nbsp; Poder: <span className="span text-primary"> {powers[5]}</span>
-                                <h4 className="text-white">Tipo de Equipo: <span className="text-primary h1">{tipo}</span></h4>
-                            </div>
-
-                            <div className="album py-3">
-                                <div className="home-container">
-
-                                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                                        {
-                                            heroCont.map((h) => (
-
-                                                <div className="col" key={h.id}>
-
-                                                    <div className="card shadow-sm">
-
-                                                        <div className="overflow">
-                                                            <img src={h.image.url} className="card-img-top" alt="..." />
-                                                        </div>
-
-                                                        <div className="card-body justify-content-center">
-                                                            <h3 className="card-title text-center "><b>{h.name}</b></h3>
-                                                            <div className="row">
-                                                                <div className="col-md-4 col-lg-4">
-                                                                    <b>Poderes:</b>
-                                                                </div>
-                                                                <div className="col-sm col-md">
-                                                                    <ul>
-                                                                        <li className="card-text">Combate: <b>{h.powerstats.combat}</b></li>
-                                                                        <li className="card-text">Durabilidad: <b>{h.powerstats.durability}</b></li>
-                                                                        <li className="card-text">Inteligencia:<b>{h.powerstats.intelligence}</b> </li>
-                                                                        <li className="card-text">Fuerza:<b>{h.powerstats.strength}</b> </li>
-                                                                        <li className="card-text">Velocidad: <b>{h.powerstats.speed}</b></li>
-                                                                        <li className="card-text">Poders: <b>{h.powerstats.power}</b></li>
-                                                                    </ul>
-                                                                </div>
-
-                                                            </div>
-                                                            <div className="d-flex justify-content-center align-items-center">
-                                                                <div className="btn-group">
-                                                                    <Link className="btn btn-primary" to={`/hero/${h.id}`}> +Más</Link>
-                                                                    <button className="btn btn-danger" onClick={() => { hadleDelete(h.id) }}>Quitar</button>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>))
-                                        }
+                                            <div className="info-block">
+                                                <div className="info-block-label">
+                                                    <img src={`${process.env.PUBLIC_URL}/assets/icons/combat.png`} alt='combat' />
+                                                    <span>Combate</span>
+                                                </div>
+                                                <div className="info-block-value">
+                                                    {h.powerstats?.combat}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </Fragment>
-                    )
-            }
+                        </div>
+                    ))
+                }
+            </div>
         </>
     )
 }
