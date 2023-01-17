@@ -15,7 +15,7 @@ export const Navbar = () => {
                 <Link
                     className="navbar-brand"
                     to="/">
-                    <h2>Heroes Teams</h2>
+                    <h2>Heroes</h2>
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -33,15 +33,15 @@ export const Navbar = () => {
                             <NavLink
                                 activeClassName="active"
                                 className="nav-link"
+                                exact to="/hero_team">Team Heroes</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                activeClassName="active"
+                                className="nav-link"
                                 exact to="/Search">Search</NavLink>
                         </li>
                     </ul>
-
-                    {/* <div className="d-flex">
-                        <span className="span text-primary me-2"> {user.email}</span>
-                        <button className="btn text-light" onClick={handleLogout} >Logout</button>
-                    </div>
-    */}
                 </div>
             </div>
         </nav>

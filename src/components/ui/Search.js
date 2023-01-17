@@ -1,6 +1,6 @@
 import { ErrorMessage } from 'formik';
 import React, { useContext, useEffect, useState } from 'react'
-import { getSearch } from '../../services/Axios'
+//import { getSearch } from '../../services/Axios'
 import { Errores } from './Errores';
 
 
@@ -33,11 +33,11 @@ export const Search = ({ history }) => {
     }
 
     const getHero = async (name) => {
-        const { data } = await getSearch(`${name}`);
-        const { results } = data;
-        if (isValidate(name, results)) {
+        //const { data } = await getSearch(`${name}`);
+        //const { results } = data;
+       /* if (isValidate(name, results)) {
             setHero(results);
-        }
+        }*/
     }
 
     const isValidate = (name, results) => {

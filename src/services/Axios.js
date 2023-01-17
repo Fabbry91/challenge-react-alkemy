@@ -2,35 +2,39 @@ import axios from 'axios';
 
 //configuracion api
 const httpInstance = axios.create({
-    baseURL: `https://superhero-search.p.rapidapi.com/api/`,
-    headers: {
-        'X-RapidAPI-Key': '775c699a79msh1e33de4f97f8b2bp1249aejsn3a53e740d14f',
-        'X-RapidAPI-Host': 'superhero-search.p.rapidapi.com'
-    }
+    baseURL: `https://akabab.github.io/superhero-api/api/`
+
 });
 
 //get Heroes
 const getHeroes = async () => {
-    const response = await httpInstance.get('/heroes');
+    const response = await httpInstance.get('/all.json');
     return response;
 };
 
-//get Villanos
-const getVillains = async () => {
-    const response = await httpInstance.get('/villains');
+//get Id
+const getById = async (id) => {
+    const response = await httpInstance.get(`/id/${id}.json`);
     return response;
 };
 
-//get Busqueda
+/*/get Busqueda
 const getSearch = async (searchName) => {
-    const response = await httpInstance.get({
-        params: { hero: `${searchName}` }
+    const httpInstance = axios.create({
+        baseURL: `https://akabab.github.io/superhero-api/api/id`,
+        /*params: { hero: `${searchName}` },
+        headers: {
+            'X-RapidAPI-Key': '775c699a79msh1e33de4f97f8b2bp1249aejsn3a53e740d14f',
+            'X-RapidAPI-Host': 'superhero-search.p.rapidapi.com'
+        },
+
     });
+    const response = await httpInstance.get();
     return response;
 };
-
+*/
 export {
     getHeroes,
-    getSearch,
-    getVillains  
+    //getSearch,
+    getById
 } 
