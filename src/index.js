@@ -1,14 +1,14 @@
 // React 17
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 // React 18
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// libs
+/*/ libs
 import $ from 'jquery';
-import Popper from 'popper.js';
+import Popper from 'popper.js';*/
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import { App } from './App';

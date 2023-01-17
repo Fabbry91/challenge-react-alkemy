@@ -1,13 +1,7 @@
 import React from 'react'
-import { NavLink, Link, useHistory } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 export const Navbar = () => {
-
-    const history = useHistory();
-
-    const handleLogout = () => {
-        history.replace('/');
-    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark p-3">

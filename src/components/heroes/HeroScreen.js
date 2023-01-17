@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Redirect, useHistory, useParams } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
 import { getById } from '../../services/Axios'
 
 
@@ -34,7 +34,7 @@ export const HeroScreen = ({ history }) => {
                 return <Redirect to='/' />
             }
         })();
-    }, []);
+    }, [heroData, params.id]);
 
 
     const handleReturn = () => {
@@ -53,7 +53,7 @@ export const HeroScreen = ({ history }) => {
             let equipo = JSON.parse(localStorage.getItem("equipo"));
             let equipo2 = JSON.parse(localStorage.getItem("equipo2"));
 
-            if (equipo.heroes.length === 4 && equipo2.heroes.length === 4){
+            if (equipo.heroes.length === 4 && equipo2.heroes.length === 4) {
                 return console.log("quipo completo");
             }
 
@@ -75,13 +75,13 @@ export const HeroScreen = ({ history }) => {
                 if (arrHero) {
                     console.log("este heroe y existe en el equipo", `${equipo.name}`);
                 } else if (!arrHero2) {
-                    
+
                     equipo2.heroes.push(hero)
                     localStorage.setItem("equipo2", JSON.stringify(equipo2));
                 }
             }
-            
-            
+
+
         } else {
             //console.log("no hay Heroes en tu equipo");
             let equipo = {
