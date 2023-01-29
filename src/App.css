@@ -29,7 +29,7 @@
 
 .card {
   position: relative;
-  max-height: 500px;
+  max-height: 390px;
   border: 0px solid transparent !important;
   background-color: transparent !important;
   overflow: hidden;
@@ -55,7 +55,7 @@
 
 .card .container-img {
   position: relative;
-  min-height: 500px;
+  min-height: 390px;
 }
 
 .card .container-img img {
@@ -85,13 +85,13 @@
 }
 
 .card-body .card-title {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
   padding-bottom: 1em;
   color: #5c7cfa;
 }
 .card-body .card-title span {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #f6f7eb;
 }
@@ -137,7 +137,7 @@
 }
 
 .info-block-label span {
-  font-size: 0.8em;
+  font-size: 0.65em;
 }
 
 .info-block-value {
